@@ -1,3 +1,4 @@
+import Providers from '@/components/Providers';
 import { cn } from '@/lib/utils';
 import { Children } from '@/types';
 import type { Metadata } from 'next';
@@ -20,7 +21,9 @@ export default function RootLayout({ children }: Children) {
   return (
     <html lang='en' className={cn('text-slate-900 antialiased', font.className)}>
       <body className='min-h-screen pt-20 antialiased text-gray-700 transition-colors duration-300 select-none bg-light dark:bg-dark dark:text-gray-200'>
-        <main className='container'>{children}</main>
+        <Providers>
+          <main className='container'>{children}</main>
+        </Providers>
       </body>
     </html>
   );
