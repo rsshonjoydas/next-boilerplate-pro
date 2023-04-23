@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar';
 import Providers from '@/components/Providers';
 import { cn } from '@/lib/utils';
 import { Children } from '@/types';
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: Children) {
     <html lang='en' className={cn('text-slate-900 antialiased', font.className)}>
       <body className='min-h-screen pt-20 antialiased text-gray-700 transition-colors duration-300 select-none bg-light dark:bg-dark dark:text-gray-200'>
         <Providers>
+          <Navbar />
           <main className='container'>{children}</main>
         </Providers>
       </body>
