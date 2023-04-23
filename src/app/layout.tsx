@@ -1,6 +1,7 @@
 import { Children } from '@/types';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+import '../styles/index.scss';
 
 export const metadata: Metadata = {
   title: 'Redolence',
