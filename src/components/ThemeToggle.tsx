@@ -34,7 +34,9 @@ export function ThemeToggle() {
         <DropdownMenuItem onClick={() => setTheme('dark')}>
           <Icons.Moon
             className={`w-5 h-5 mr-2 ${
-              theme === 'dark' || theme === 'system' ? 'fill-sky-500' : 'fill-slate-400'
+              theme === 'dark' || theme === 'system' || theme === null
+                ? 'fill-sky-500'
+                : 'fill-slate-400'
             }`}
           />
 
