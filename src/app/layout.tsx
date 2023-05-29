@@ -1,9 +1,9 @@
-import Navbar from '@/components/Navbar';
 import Providers from '@/components/Providers';
 import { cn } from '@/lib/utils';
 import { Children } from '@/types';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+import 'react-tooltip/dist/react-tooltip.css';
 import '../styles/index.scss';
 
 export const metadata: Metadata = {
@@ -20,11 +20,15 @@ const font = Poppins({
 
 export default function RootLayout({ children }: Children) {
   return (
-    <html lang='en' className={cn('text-slate-900 antialiased', font.className)}>
-      <body className='min-h-screen pt-20 antialiased text-gray-700 transition-colors duration-300 select-none bg-light dark:bg-dark dark:text-gray-200'>
+    <html lang='en'>
+      <body
+        className={cn(
+          'antialiased text-gray-700 transition-colors duration-300 select-none bg-light dark:bg-dark dark:text-gray-200',
+          font.className
+        )}
+      >
         <Providers>
-          <Navbar />
-          <main className='container'>{children}</main>
+          <main>{children}</main>
         </Providers>
       </body>
     </html>
